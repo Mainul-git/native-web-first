@@ -1,22 +1,24 @@
 
-import { View,Text,TextInput,StyleSheet } from 'react-native';
+import { View,Text,TextInput,StyleSheet,Modal,Button, ScrollView, SafeAreaView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import ProgramChild from '../components/ProgramChild';
-import { Link } from 'react-router-dom';
 
-const Product = () => {
+
+const Program = () => {
 
 
     const[data,setData]=useState([])
+    const[show,setShow]=useState(false)
     const[q,setQ]=useState("")
-    
+    const url=``
     useEffect(()=>{
-        fetch('https://cors-anywhere.herokuapp.com/http://test.catalysed.org/programs/')
+       
+        fetch(' https://api.allorigins.win/raw?url=http://test.catalysed.org/programs/')
         .then(res=>res.json())
         .then(json=>setData(json)
             )
-            .catch(() => console.log("Can’t access response. Blocked by browser?"))
-    },[])
+            .catch(() => console.warn("Can’t access response. Blocked by browser?"))
+    },[data])
 
     const  search =(r)=>{
         return  (r.filter(r=>r.name.indexOf(q)>-1||
@@ -31,23 +33,23 @@ const Product = () => {
         )
         }
     return (
-        
-        <View>
-
+        <SafeAreaView  style={{height:'100%',width:'100vw',}}>
+       <ScrollView>
+             <Text style={{textDecoration:'underline',margin:'auto',marginBottom:'15px',fontSize:40}}> Program Page</Text>
              <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-               placeholder = "Search for the Program"
+               placeholder = "  Search for the Program"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                value={q} 
                onChange={(e)=>setQ(e.target.value)}
             />
-            <View>
-            <ProgramChild style={{backgroundColor:'green'}} data={search(data)}/>
+            <View  style={{}}>
+            <ProgramChild  data={search(data)}/>
             </View>
 
-        </View>
-       
+   </ScrollView>
+        </SafeAreaView>
     );
 };
 
@@ -55,10 +57,23 @@ const styles = StyleSheet.create({
     input: {
         margin: 15,
         height: 40,
+        width:300,
+        margin:'auto',
         borderColor: '#7a42f4',
-        borderWidth: 3
-     }
+        borderWidth: 3,
+        backgroundColor:'white',
+        marginBottom:'35px'
+       
+     
+     },
+     buttonContainer: {
+    // flex: 1,
+    justifyContent: "center",
+    padding: 15, 
+   
+  
+  }
     }
     )
 
-export default Product;
+export default Program;
