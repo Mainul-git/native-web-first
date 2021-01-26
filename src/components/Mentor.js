@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { View ,Text,Image, ScrollView,Button,StyleSheet} from 'react-native';
 import MentorDialog from './MentorDialog';
+import {Row,Col,Card} from 'react-bootstrap'
 
 const Mentor = ({data,index}) => {
     const value=index+1
@@ -10,7 +11,10 @@ const Mentor = ({data,index}) => {
     
    
     return (
+      
+        <Col md={6} className="d-flex justify-content-center">    
        <View style={{textAlign:'center'}}>
+          
            <Image 
            source={data.profilePic}
            style={{ width: 200,
@@ -30,9 +34,14 @@ const Mentor = ({data,index}) => {
                 color="indigo" 
                 onPress={()=>{setIsOpen(true)}}
                 />
+                
                 </View  >
+           
            <MentorDialog modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} value={value}  />
+         
        </View>
+       </Col>
+    
     );
 };
 const styles = StyleSheet.create({

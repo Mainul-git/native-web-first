@@ -33,7 +33,7 @@ const Program = () => {
         )
         }
     return (
-        <SafeAreaView  style={{height:'100%',width:'100vw',}}>
+        <SafeAreaView  style={{width:'100vw',height:'100%'}}>
        <ScrollView>
              <Text style={{textDecoration:'underline',margin:'auto',marginBottom:'15px',fontSize:40}}> Program Page</Text>
              <TextInput style = {styles.input}
@@ -44,7 +44,7 @@ const Program = () => {
                value={q} 
                onChange={(e)=>setQ(e.target.value)}
             />
-            <View  style={{}}>
+            <View  style={{width:"100vw"}}>
             <ProgramChild  data={search(data)}/>
             </View>
 

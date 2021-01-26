@@ -1,6 +1,6 @@
 import { View,Modal,Text,Button,StyleSheet } from 'react-native';
 import React, { useState ,useEffect} from 'react';
-
+import {Container} from 'react-bootstrap'
 const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
 
     const mentorId=value
@@ -16,11 +16,14 @@ const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
 
 
     return (
+        <Container>
         <View>
+           
              <Modal transparent={true} visible={modalIsOpen}>
-                  <View style={{backgroundColor:"#000000aaa",flex:1,width:'100vw'}}>
-                      <View style={{margin:70, backgroundColor:'white',flex:1,padding:40}}>
-                          <Text style=
+          
+                  <View style={{backgroundColor:"#000000aaa",flex:1,width:'100vw',overflow:'hidden'}}>
+                      <View style={{margin:50, backgroundColor:'white',flex:1,padding:10}}>
+                          <Text className="d-flex justify-content-center" style=
                           {{fontSize:70,
                           margin:'auto'
                           }}
@@ -46,10 +49,12 @@ const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
                            </View>
                       </View>
                   </View>
+                  
                </Modal>
                
                
         </View>
+        </Container>
     );
 };
 
