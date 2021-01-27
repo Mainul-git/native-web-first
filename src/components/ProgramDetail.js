@@ -35,7 +35,7 @@ const[mentor,setMentor]=useState([])
         </Text>
         <View>
         <Text style={{textDecoration:'underline',margin:'auto',marginBottom:'15px',fontSize:40,marginTop:10}}> Mentors</Text>
-        <Row>
+        <Row className="d-flex justify-content-center">
           {
               mentor.map((data,index)=><Mentor data={data} index={index}/>)
           }

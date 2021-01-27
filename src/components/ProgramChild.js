@@ -15,8 +15,8 @@ const ProgramChild = ({data}) => {
   
     data.map((data,index)=>
     <Col md={4} style={{marginBottom:'5px'}}>   
-    <Link className="justify-content-center" style={{textDecoration:'none',textAlign:'center',width:'300px',height:'300px',backgroundColor:'yellow'}}  to={`programDetail/${data.id}`}>
-  <Card className="" style={{width:'100%',height:'100%',backgroundColor:'yellow'}}>
+    <Link style={{textDecoration:'none',textAlign:'center',width:'300px',height:'300px',backgroundColor:'yellow'}}  to={`programDetail/${data.id}`}>
+  <Card  style={{width:'100%',height:'100%',backgroundColor:'yellow'}}>
     <Text  > 
  
     <Text  style={{color:'black',fontSize:30}}>{data.name}</Text> {'\n'} 
