@@ -1,6 +1,6 @@
 import { View,Modal,Text,Button,StyleSheet } from 'react-native';
 import React, { useState ,useEffect} from 'react';
-import {Container} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
 
     const mentorId=value
@@ -16,28 +16,28 @@ const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
 
 
     return (
-        <Container>
-        <View>
+        <Card style={{margin:'auto'}} className="d-flex justify-content-center ">
+        <View className="d-flex justify-content-center" style={{}}>
            
-             <Modal transparent={true} visible={modalIsOpen}>
+             <Modal  transparent={true} visible={modalIsOpen}>
           
-                  <View style={{backgroundColor:"#000000aaa",flex:1,width:'100vw',overflow:'hidden'}}>
-                      <View style={{margin:50, backgroundColor:'white',flex:1,padding:10}}>
-                          <Text className="d-flex justify-content-center" style=
-                          {{fontSize:70,
-                          margin:'auto'
+                  <View className=" " style={{backgroundColor:"#000000aaa",width:'100vw', height:"500px",margin:"auto"}}>
+                      <View className="d-flex justify-content-center" style={{textAlign:'center',margin:30, backgroundColor:'white',flex:1,padding:10}}>
+                          <Text className="text-center" style=
+                          {{fontSize:60,
+                        
                           }}
                           >
                               {mentorDetail.firstName} {mentorDetail.lastName}
                           </Text>
-                          {'\n'}
-                          <View style={{display:'inline',margin:'auto'}}>
-                          <Text >Email :</Text>  <Text>{mentorDetail.email}
+                        
+                         
+                          <Text className="text-center">Email :  {mentorDetail.email}
                           </Text>
-                          </View>{'\n'}
-                          <View style={{display:'inline',margin:'auto'}}>
-                       <Text>Location :</Text>  <Text>{mentorDetail.location}</Text>
-                          </View>
+                        
+                         
+                       <Text className="text-center">Location : {mentorDetail.location}</Text>
+                        
                          <View   style={ styles.buttonContainer}>
                           <Button
                            title="Close"
@@ -54,7 +54,7 @@ const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
                
                
         </View>
-        </Container>
+        </Card>
     );
 };
 

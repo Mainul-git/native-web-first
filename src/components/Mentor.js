@@ -25,7 +25,7 @@ const Mentor = ({data,index}) => {
              marginBottom:6
             }}
            />
-           <Text style={{fontSize:40}}>
+           <Text className="" style={{fontSize:40}}>
            {data.firstName} {data.lastName}
            </Text>
            <View style={styles.buttonContainer}>
