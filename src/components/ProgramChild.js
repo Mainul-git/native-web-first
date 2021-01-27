@@ -8,7 +8,7 @@ const ProgramChild = ({data}) => {
     
     return (
         <View style={{flex:1,width:"100vw",flexWrap:"wrap",alignItems:'center',justifyContent:'center',paddingRight:'10px'}}>
-            <Row className="d-flex justify-content-center m-auto">
+            <Row style={{width:'100%'}} className="d-flex justify-content-center m-auto">
         {/* <ScrollView style={{height:'100%',width:'100%',flex:1}}> */}
             
             {
@@ -17,7 +17,7 @@ const ProgramChild = ({data}) => {
     <Col md={4} style={{marginBottom:'5px'}}>   
     <Link style={{textDecoration:'none',textAlign:'center',width:'300px',height:'300px',backgroundColor:'yellow'}}  to={`programDetail/${data.id}`}>
   <Card  style={{width:'100%',height:'100%',backgroundColor:'yellow'}}>
-    <Text  > 
+    <Text style={{width:'auto',height:'auto'}}  > 
  
     <Text  style={{color:'black',fontSize:30}}>{data.name}</Text> {'\n'} 
     <Text  style={{color:'black',fontSize:25}}>{data.category}</Text> {'\n'} 

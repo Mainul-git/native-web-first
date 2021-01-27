@@ -44,7 +44,7 @@ const Program = () => {
                value={q} 
                onChange={(e)=>setQ(e.target.value)}
             />
-            <View  style={{width:"100vw"}}>
+            <View  style={{width:"100%"}}>
             <ProgramChild  data={search(data)}/>
             </View>
 

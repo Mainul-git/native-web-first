@@ -16,8 +16,8 @@ const MentorDialog = ({modalIsOpen,value,setIsOpen}) => {
 
 
     return (
-        <Card style={{margin:'auto'}} className="d-flex justify-content-center ">
-        <View className="d-flex justify-content-center" style={{}}>
+        <Card >
+        <View style={{}}>
            
              <Modal  transparent={true} visible={modalIsOpen}>
           
